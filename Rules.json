@@ -8149,6 +8149,60 @@
       }
     ]
   },
+  "sketchbook":{
+    "detectors": [
+        {
+            "presentMatcher":[
+                {
+                    "type":"css",
+                    "target":{
+                        "selector": ".sqs-cookie-banner-v2-cta-container"
+                    }
+                }
+            ],
+            "showingMatcher":[
+                {
+                    "type":"css",
+                    "target":{
+                        "selector": ".sqs-cookie-banner-v2-cta-container",
+                        "displayFilter": true
+                    }
+                }
+            ]
+        }
+    ],
+    "methods": [
+        {
+            "action":{
+                "type":"consent",
+                "consents": [
+                    {
+                        "matcher":{
+                            "type":"checkbox",
+                            "target":{
+                                "selector": "button"
+                            },
+                            "parent":{
+                                "selector":".sqs-cookie-banner-v2-acceptWrapper"
+                            }
+                        },
+                        "toggleAction":{
+                            "type":"click",
+                            "target":{
+                                "selector": "button"
+                            },
+                            "parent":{
+                                "selector":".sqs-cookie-banner-v2-acceptWrapper"
+                            }
+                        },
+                        "type": "A"
+                    }
+                ]
+            },
+            "name": "DO_CONSENT"
+        }
+    ]
+},
   "trustarcbar":{
     "detectors":[
       {
