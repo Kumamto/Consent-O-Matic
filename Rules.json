@@ -8344,12 +8344,6 @@
                         "target": {
                             "selector": ".mainContent"
                         }
-                    },
-                   {
-                        "type": "hide",
-                        "target": {
-                            "selector": "#truste-consent-content"
-                        }
                     }
                 ]
             },
