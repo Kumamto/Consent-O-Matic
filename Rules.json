@@ -8404,7 +8404,7 @@
             {
               "type": "click",
               "target": {
-                "selector": ".close"
+                "selector": ".truste-close-button"
               }
             }
           ]
