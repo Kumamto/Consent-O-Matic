@@ -84,7 +84,7 @@
                                   "childFilter": {
                                     "target": {
                                       "selector": "span[role='option'].active",
-                                      "textFilter": "On"
+                                      "textFilter": "yes"
                                     }
                                   },
                                   "selector": ".switch"
@@ -123,7 +123,7 @@
                                   "childFilter": {
                                     "target": {
                                       "selector": "span[role='option'].active",
-                                      "textFilter": "On"
+                                      "textFilter": "yes"
                                     }
                                   },
                                   "selector": ".switch"
