@@ -8287,7 +8287,7 @@
                                   "childFilter": {
                                     "target": {
                                       "selector": "span[role='option'].active",
-                                      "textFilter": "yes"
+                                      "textFilter": "Yes"
                                     }
                                   },
                                   "selector": ".switch"
@@ -8326,7 +8326,7 @@
                                   "childFilter": {
                                     "target": {
                                       "selector": "span[role='option'].active",
-                                      "textFilter": "yes"
+                                      "textFilter": "Yes"
                                     }
                                   },
                                   "selector": ".switch"
