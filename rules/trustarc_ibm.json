@@ -64,21 +64,21 @@
                             "matcher":{
                                 "type":"checkbox",
                                 "parent":{
-                                    "selector": ".mainContent",
-                                    "textFilter":"Functional Cookies"
+                                    "selector": ".mainContent"
                                 },
                                 "target":{
-                                    "selector":"span"
+                                    "selector":"span",
+                                    "textFilter":"Functional Cookies"
                                 }
                             },
                             "toggleAction":{
                                 "type":"click",
                                 "target":{
-                                    "selector": "span"
+                                    "selector": "span",
+                                    "textFilter":"Functional Cookies"
                                 },
                                 "parent":{
-                                    "selector": ".mainContent",
-                                    "textFilter":"Functional Cookies"
+                                    "selector": ".mainContent"                                    
                                 }
                             },
                             "type": "A"
@@ -87,21 +87,21 @@
                             "matcher":{
                                 "type":"checkbox",
                                 "parent":{
-                                    "selector": ".mainContent",
-                                    "textFilter":"Personalization Cookies"
+                                    "selector": ".mainContent"
                                 },
                                 "target":{
-                                    "selector":"span"
+                                    "selector":"span",
+                                    "textFilter":"Personalization Cookies"
                                 }
                             },
                             "toggleAction":{
                                 "type":"click",
                                 "target":{
-                                    "selector": "span"
+                                    "selector": "span",
+                                    "textFilter":"Personalization Cookies"
                                 },
                                 "parent":{
-                                    "selector": ".mainContent",
-                                    "textFilter":"Personalization Cookies"
+                                    "selector": ".mainContent"
                                 }
                             },
                             "type": "B"
