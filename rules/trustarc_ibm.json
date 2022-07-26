@@ -41,7 +41,7 @@
                 "selector": ".cookiecat"
               },
               "parent": {
-                "selector": ".mainContent"
+                "selector": ".mainContent[aria-hidden = 'false']"
               },
               "retries": 10,
               "waitTime": 250
@@ -168,7 +168,7 @@
                 {
                     "type": "hide",
                     "target": {
-                    "selector": ".mainContent"
+                    "selector": ".mainContent[aria-hidden = 'false']"
                     }
                 },
                 {
