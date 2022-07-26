@@ -8178,12 +8178,9 @@
                 "consents": [
                     {
                         "matcher":{
-                            "type":"checkbox",
+                            "type":"css",
                             "target":{
-                                "selector": "button"
-                            },
-                            "parent":{
-                                "selector":".sqs-cookie-banner-v2-acceptWrapper"
+                                "selector": ".sqs-cookie-banner-v2-cta-container"
                             }
                         },
                         "trueAction":{
