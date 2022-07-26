@@ -1,151 +1,186 @@
 {
-	"$schema": "https://raw.githubusercontent.com/Kumamto/Consent-O-Matic/master/rules.schema.json",
-    "trustarcibm": {
-        "detectors": [
+  "$schema": "https://raw.githubusercontent.com/Kumamto/Consent-O-Matic/master/rules.schema.json",
+  "trustarcibm": {
+    "detectors": [
+      {
+        "presentMatcher": {
+          "parent": null,
+          "target": {
+            "selector": "#truste-consent-content, .truste-consent-content, #truste-consent-track"
+          },
+          "type": "css"
+        },
+        "showingMatcher": {
+          "parent": null,
+          "target": {
+            "selector": "#truste-consent-content, .truste-consent-content, #truste-consent-track"
+          },
+          "type": "css"
+        }
+      }
+    ],
+    "methods": [
+      {
+        "action": {
+          "actions": [
             {
-                "presentMatcher": {
-                    "parent": null,
-                    "target": {
-                        "selector": "#truste-consent-content, .truste-consent-content, #truste-consent-track"
-                    },
-                    "type": "css"
-                },
-                "showingMatcher": {
-                    "parent": null,
-                    "target": {
-                        "selector": "#truste-consent-content, .truste-consent-content, #truste-consent-track"
-                    },
-                    "type": "css"
-                }
-            }
-        ],
-        "methods": [
-            {
-                "action": {
-                    "actions": [
-                        {
-                            "parent": null,
-                            "target": {
-                                "displayFilter": true,
-                                "selector": "#truste-show-consent"
-                            },
-                            "type": "waitcss"
-                        },
-                        {
-                            "parent": {
-                                "selector": "#truste-consent-content"
-                            },
-                            "target": {
-                                "selector": "#truste-show-consent"
-                            },
-                            "type": "click"
-                        },
-                        {
-                            "type": "waitcss",
-                            "target": {
-                                "selector": ".cookiecat"
-                            },
-                            "parent": {
-                                "selector": ".mainContent"
-                            },
-                            "retries": 10,
-                            "waitTime": 250
-                        }
-                    ],
-                    "type": "list"
-                },
-                "name": "OPEN_OPTIONS"
+              "parent": null,
+              "target": {
+                "displayFilter": true,
+                "selector": "#truste-show-consent"
+              },
+              "type": "waitcss"
             },
             {
+              "parent": {
+                "selector": "#truste-consent-content"
+              },
+              "target": {
+                "selector": "#truste-show-consent"
+              },
+              "type": "click"
+            },
+            {
+              "type": "waitcss",
+              "target": {
+                "selector": ".cookiecat"
+              },
+              "parent": {
+                "selector": ".mainContent"
+              },
+              "retries": 10,
+              "waitTime": 250
+            }
+          ],
+          "type": "list"
+        },
+        "name": "OPEN_OPTIONS"
+      },
+      {
+        "action": {
+          "type": "list",
+          "actions": [
+            {
+                "type":"foreach",
+                "target":{
+                    "selector": ".cookiecat"
+                },
                 "action":{
-                    "type":"consent",
-                    "consents": [
-                        {
-                            "matcher":{
-                                "type":"checkbox",
-                                "parent":{
-                                    "selector": ".mainContent"
-                                },
-                                "target":{
-                                    "selector":"span",
-                                    "textFilter":"Functional Cookies"
-                                }
-                            },
-                            "toggleAction":{
-                                "type":"click",
-                                "target":{
-                                    "selector": "span",
-                                    "textFilter":"Functional Cookies"
-                                },
-                                "parent":{
-                                    "selector": ".mainContent"                                    
-                                }
-                            },
-                            "type": "A"
+                    "type":"list",
+                    "actions":[
+                    {
+                        "type": "ifcss",
+                        "target": {
+                          "selector": "h3",
+                          "textFilter": "Functional Cookies"
                         },
-                        {
-                            "matcher":{
-                                "type":"checkbox",
-                                "parent":{
-                                    "selector": ".mainContent"
-                                },
-                                "target":{
-                                    "selector":"span",
-                                    "textFilter":"Personalization Cookies"
+                        "trueAction": {
+                          "type": "consent",
+                          "consents": [
+                            {
+                              "matcher": {
+                                "type": "css",
+                                "target": {
+                                  "childFilter": {
+                                    "target": {
+                                      "selector": "span[role='option'].active",
+                                      "textFilter": "On"
+                                    }
+                                  },
+                                  "selector": ".switch"
                                 }
-                            },
-                            "toggleAction":{
-                                "type":"click",
-                                "target":{
-                                    "selector": "span",
-                                    "textFilter":"Personalization Cookies"
-                                },
-                                "parent":{
-                                    "selector": ".mainContent"
+                              },
+                              "trueAction": {
+                                "type": "click",
+                                "target": {
+                                  "selector": ".switch span.on[role='option']"
                                 }
-                            },
-                            "type": "B"
+                              },
+                              "falseAction": {
+                                "type": "click",
+                                "target": {
+                                  "selector": ".switch span.off[role='option']"
+                                }
+                              },
+                              "type": "A"
+                            }
+                          ]
                         }
+                      },
+                      {
+                        "type": "ifcss",
+                        "target": {
+                          "selector": "h3",
+                          "textFilter": "Personalization Cookies"
+                        },
+                        "trueAction": {
+                          "type": "consent",
+                          "consents": [
+                            {
+                              "matcher": {
+                                "type": "css",
+                                "target": {
+                                  "childFilter": {
+                                    "target": {
+                                      "selector": "span[role='option'].active",
+                                      "textFilter": "On"
+                                    }
+                                  },
+                                  "selector": ".switch"
+                                }
+                              },
+                              "trueAction": {
+                                "type": "click",
+                                "target": {
+                                  "selector": ".switch span.on[role='option']"
+                                }
+                              },
+                              "falseAction": {
+                                "type": "click",
+                                "target": {
+                                  "selector": ".switch span.off[role='option']"
+                                }
+                              },
+                              "type": "B"
+                            }
+                          ]
+                        }
+                      }
                     ]
+                  }
+                }
+                ]
                 },
-                "name": "DO_CONSENT"
+        "name": "DO_CONSENT"
+      },
+      {
+        "action": {
+          "type": "list",
+          "actions": [
+            {
+              "type": "click",
+              "target": {
+                "selector": ".submit"
+              }
             },
             {
-                "action": {
-                    "type": "list",
-                    "actions": [
-                        {
-                            "type": "wait",
-                            "waitTime": 500
-                        },
-                        {
-                            "type": "click",
-                            "target": {
-                                "selector": "a",
-                                "textFilter":"Accept custom settings"
-                            },
-                            "parent":{
-                                "selector": ".mainContent"
-                            }
-                        }
-                    ]
-                },
-                "name": "SAVE_CONSENT"
+              "type": "waitcss",
+              "target": {
+                "selector": ".close"
+              },
+              "retries": 1000,
+              "waitTime": 250
             },
             {
-                "action": {
-                    "type": "list",
-                    "actions": [
-                        {
-                            "type": "hide",
-                            "target": {
-                                "selector": ".mainContent"
-                            }
-                        }
-                    ]
-                },
-                "name": "HIDE_CMP"
+              "type": "click",
+              "target": {
+                "selector": ".close"
+              }
             }
-        ]
-    }
+          ]
+        },
+        "name": "HIDE_CMP"
+      }
+    ]
+  }
 }

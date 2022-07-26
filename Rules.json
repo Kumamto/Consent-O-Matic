@@ -8205,152 +8205,187 @@
 },
   "trustarcibm": {
     "detectors": [
-        {
-            "presentMatcher": {
-                "parent": null,
-                "target": {
-                    "selector": "#truste-consent-content, .truste-consent-content, #truste-consent-track"
-                },
-                "type": "css"
-            },
-            "showingMatcher": {
-                "parent": null,
-                "target": {
-                    "selector": "#truste-consent-content, .truste-consent-content, #truste-consent-track"
-                },
-                "type": "css"
-            }
+      {
+        "presentMatcher": {
+          "parent": null,
+          "target": {
+            "selector": "#truste-consent-content, .truste-consent-content, #truste-consent-track"
+          },
+          "type": "css"
+        },
+        "showingMatcher": {
+          "parent": null,
+          "target": {
+            "selector": "#truste-consent-content, .truste-consent-content, #truste-consent-track"
+          },
+          "type": "css"
         }
+      }
     ],
     "methods": [
-        {
-            "action": {
-                "actions": [
-                    {
-                        "parent": null,
-                        "target": {
-                            "displayFilter": true,
-                            "selector": "#truste-show-consent"
-                        },
-                        "type": "waitcss"
-                    },
-                    {
-                        "parent": {
-                            "selector": "#truste-consent-content"
-                        },
-                        "target": {
-                            "selector": "#truste-show-consent"
-                        },
-                        "type": "click"
-                    },
-                    {
-                        "type": "waitcss",
-                        "target": {
-                            "selector": ".cookiecat"
-                        },
-                        "parent": {
-                            "selector": ".mainContent"
-                        },
-                        "retries": 10,
-                        "waitTime": 250
-                    }
-                ],
-                "type": "list"
+      {
+        "action": {
+          "actions": [
+            {
+              "parent": null,
+              "target": {
+                "displayFilter": true,
+                "selector": "#truste-show-consent"
+              },
+              "type": "waitcss"
             },
-            "name": "OPEN_OPTIONS"
+            {
+              "parent": {
+                "selector": "#truste-consent-content"
+              },
+              "target": {
+                "selector": "#truste-show-consent"
+              },
+              "type": "click"
+            },
+            {
+              "type": "waitcss",
+              "target": {
+                "selector": ".cookiecat"
+              },
+              "parent": {
+                "selector": ".mainContent"
+              },
+              "retries": 10,
+              "waitTime": 250
+            }
+          ],
+          "type": "list"
         },
-        {
-          "action":{
-              "type":"consent",
-              "consents": [
-                  {
-                      "matcher":{
-                          "type":"checkbox",
-                          "parent":{
-                              "selector": ".mainContent"
-                          },
-                          "target":{
-                              "selector":"span",
-                              "textFilter":"Functional Cookies"
-                          }
-                      },
-                      "toggleAction":{
-                          "type":"click",
-                          "target":{
-                              "selector": "span",
-                              "textFilter":"Functional Cookies"
-                          },
-                          "parent":{
-                              "selector": ".mainContent"                                    
-                          }
-                      },
-                      "type": "A"
-                  },
-                  {
-                      "matcher":{
-                          "type":"checkbox",
-                          "parent":{
-                              "selector": ".mainContent"
-                          },
-                          "target":{
-                              "selector":"span",
-                              "textFilter":"Personalization Cookies"
-                          }
-                      },
-                      "toggleAction":{
-                          "type":"click",
-                          "target":{
-                              "selector": "span",
-                              "textFilter":"Personalization Cookies"
-                          },
-                          "parent":{
-                              "selector": ".mainContent"
-                          }
-                      },
-                      "type": "B"
-                  }
-              ]
-          },
-          "name": "DO_CONSENT"
+        "name": "OPEN_OPTIONS"
       },
-        {
-            "action": {
-                "type": "list",
-                "actions": [
+      {
+        "action": {
+          "type": "list",
+          "actions": [
+            {
+                "type":"foreach",
+                "target":{
+                    "selector": ".cookiecat"
+                },
+                "action":{
+                    "type":"list",
+                    "actions":[
                     {
-                        "type": "wait",
-                        "waitTime": 500
-                    },
-                    {
-                        "type": "click",
+                        "type": "ifcss",
                         "target": {
-                            "selector": "a",
-                            "textFilter":"Accept custom settings"
+                          "selector": "h3",
+                          "textFilter": "Functional Cookies"
                         },
-                        "parent":{
-                            "selector": ".mainContent"
+                        "trueAction": {
+                          "type": "consent",
+                          "consents": [
+                            {
+                              "matcher": {
+                                "type": "css",
+                                "target": {
+                                  "childFilter": {
+                                    "target": {
+                                      "selector": "span[role='option'].active",
+                                      "textFilter": "On"
+                                    }
+                                  },
+                                  "selector": ".switch"
+                                }
+                              },
+                              "trueAction": {
+                                "type": "click",
+                                "target": {
+                                  "selector": ".switch span.on[role='option']"
+                                }
+                              },
+                              "falseAction": {
+                                "type": "click",
+                                "target": {
+                                  "selector": ".switch span.off[role='option']"
+                                }
+                              },
+                              "type": "A"
+                            }
+                          ]
                         }
-                    }
-                ]
-            },
-            "name": "SAVE_CONSENT"
-        },
-        {
-            "action": {
-                "type": "list",
-                "actions": [
-                    {
-                        "type": "hide",
+                      },
+                      {
+                        "type": "ifcss",
                         "target": {
-                            "selector": ".mainContent"
+                          "selector": "h3",
+                          "textFilter": "Personalization Cookies"
+                        },
+                        "trueAction": {
+                          "type": "consent",
+                          "consents": [
+                            {
+                              "matcher": {
+                                "type": "css",
+                                "target": {
+                                  "childFilter": {
+                                    "target": {
+                                      "selector": "span[role='option'].active",
+                                      "textFilter": "On"
+                                    }
+                                  },
+                                  "selector": ".switch"
+                                }
+                              },
+                              "trueAction": {
+                                "type": "click",
+                                "target": {
+                                  "selector": ".switch span.on[role='option']"
+                                }
+                              },
+                              "falseAction": {
+                                "type": "click",
+                                "target": {
+                                  "selector": ".switch span.off[role='option']"
+                                }
+                              },
+                              "type": "B"
+                            }
+                          ]
                         }
-                    }
+                      }
+                    ]
+                  }
+                }
                 ]
+                },
+        "name": "DO_CONSENT"
+      },
+      {
+        "action": {
+          "type": "list",
+          "actions": [
+            {
+              "type": "click",
+              "target": {
+                "selector": ".submit"
+              }
             },
-            "name": "HIDE_CMP"
-        }
+            {
+              "type": "waitcss",
+              "target": {
+                "selector": ".close"
+              },
+              "retries": 1000,
+              "waitTime": 250
+            },
+            {
+              "type": "click",
+              "target": {
+                "selector": ".close"
+              }
+            }
+          ]
+        },
+        "name": "HIDE_CMP"
+      }
     ]
-},
+  },
   "umf.dk":{
     "detectors":[
       {
