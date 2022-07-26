@@ -32,9 +32,6 @@
               "type": "waitcss"
             },
             {
-              "parent": {
-                "selector": "#truste-consent-content"
-              },
               "target": {
                 "selector": "#truste-show-consent"
               },
