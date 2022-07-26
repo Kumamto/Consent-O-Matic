@@ -8390,7 +8390,7 @@
             {
               "type": "click",
               "target": {
-                "selector": ".submit"
+                "selector": ".submit[role = 'button']"
               }
             }
         ]
