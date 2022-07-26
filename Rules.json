@@ -8392,14 +8392,30 @@
               "target": {
                 "selector": ".submit"
               }
-            },
-            {
-              "type": "click",
-              "target": {
-                "selector": ".truste-close-button"
-              }
             }
-          ]
+        ]
+        },
+        "name":"SAVE_CONSENT"
+    },
+    {
+        "action":
+        {
+            "type":"list",
+            "actions":[
+                {
+                    "type": "hide",
+                    "target": {
+                    "selector": ".mainContent"
+                    }
+                },
+                {
+                    "type": "hide",
+                    "target": {
+                    "selector": "#truste-consent-content"
+                    }
+                }
+            ]
+            
         },
         "name": "HIDE_CMP"
       }
