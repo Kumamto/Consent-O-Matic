@@ -8200,6 +8200,9 @@
                 ]
             },
             "name": "DO_CONSENT"
+        },
+        {
+            "name": "HIDE_CMP"
         }
     ]
 },
