@@ -121,7 +121,7 @@
                         {
                             "type": "click",
                             "target": {
-                                "selector": ".active",
+                                "selector": "a",
                                 "textFilter":"Accept custom settings"
                             },
                             "parent":{
