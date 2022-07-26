@@ -8324,7 +8324,7 @@
                     {
                         "type": "click",
                         "target": {
-                            "selector": "a",
+                            "selector": ".active",
                             "textFilter":"Accept custom settings"
                         },
                         "parent":{
