@@ -8203,6 +8203,40 @@
         }
     ]
 },
+"trustarc_popup_hider": {
+  "detectors": [
+      {
+          "presentMatcher": [
+              {
+                  "type": "css",
+                  "target": {
+                      "selector": "#truste-consent-track"
+                  }
+              }
+          ],
+          "showingMatcher": [
+              {
+                  "type": "css",
+                  "target": {
+                      "selector": "#truste-consent-track",
+                      "displayFilter": true
+                  }
+              }
+          ]
+      }
+  ],
+  "methods": [
+      {
+          "action": {
+              "type": "click",
+              "target": {
+                  "selector": "#truste-show-consent"
+              }
+          },
+          "name": "OPEN_OPTIONS"
+      }
+  ]
+},
   "trustarcibm": {
     "detectors": [
       {

@@ -7,7 +7,7 @@
                     {
                         "type": "css",
                         "target": {
-                            "selector": ".truste_box_overlay"
+                            "selector": "#truste-consent-track"
                         }
                     }
                 ],
@@ -15,7 +15,7 @@
                     {
                         "type": "css",
                         "target": {
-                            "selector": ".truste_box_overlay",
+                            "selector": "#truste-consent-track",
                             "displayFilter": true
                         }
                     }
@@ -25,34 +25,12 @@
         "methods": [
             {
                 "action": {
-                    "type": "hide",
+                    "type": "click",
                     "target": {
-                        "selector": ".truste_box_overlay"
+                        "selector": "#truste-show-consent"
                     }
                 },
-                "name": "HIDE_CMP"
-            },
-            {
-                "action": {
-                    "type": "waitcss",
-                    "target": {
-                        "selector": ".truste_box_overlay",
-                        "displayFilter": true
-                    },
-                    "retries": 100,
-                    "waitTime": 250,
-                    "negated": true
-                },
                 "name": "OPEN_OPTIONS"
-            },
-            {
-                "name": "DO_CONSENT"
-            },
-            {
-                "name": "SAVE_CONSENT"
-            },
-            {
-                "name": "UTILITY"
             }
         ]
     }
