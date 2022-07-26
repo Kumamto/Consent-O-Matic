@@ -8198,7 +8198,7 @@
                               "selector": "button"
                           },
                           "parent":{
-                              "selector":".sqs-cookie-banner-v2-denytWrapper"
+                              "selector":".sqs-cookie-banner-v2-denyWrapper"
                           }
                       },
                         "type": "A"
