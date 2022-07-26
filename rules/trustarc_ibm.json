@@ -157,14 +157,6 @@
               }
             },
             {
-              "type": "waitcss",
-              "target": {
-                "selector": ".close"
-              },
-              "retries": 1000,
-              "waitTime": 250
-            },
-            {
               "type": "click",
               "target": {
                 "selector": ".truste-close-button"
