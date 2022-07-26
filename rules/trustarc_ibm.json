@@ -121,7 +121,11 @@
                         {
                             "type": "click",
                             "target": {
-                                "selector": ".submit"
+                                "selector": ".submit",
+                                "textFilter":"Accept custom settings"
+                            },
+                            "parent":{
+                                "selector": ".mainContent"
                             }
                         }
                     ]
