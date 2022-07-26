@@ -8313,7 +8313,7 @@
                         "type": "ifcss",
                         "target": {
                           "selector": "h3",
-                          "textFilter": "Functional"
+                          "textFilter": "Functional cookies"
                         },
                         "trueAction": {
                           "type": "consent",
@@ -8351,7 +8351,7 @@
                         "type": "ifcss",
                         "target": {
                           "selector": "h3",
-                          "textFilter": "Personalization"
+                          "textFilter": "Personalization cookies"
                         },
                         "trueAction": {
                           "type": "consent",
