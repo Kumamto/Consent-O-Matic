@@ -1,0 +1,133 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Kumamto/Consent-O-Matic/master/rules.schema.json",
+    "trustarcibm": {
+        "detectors": [
+            {
+                "presentMatcher": {
+                    "parent": null,
+                    "target": {
+                        "selector": "#truste-consent-content, .truste-consent-content, #truste-consent-track"
+                    },
+                    "type": "css"
+                },
+                "showingMatcher": {
+                    "parent": null,
+                    "target": {
+                        "selector": "#truste-consent-content, .truste-consent-content, #truste-consent-track"
+                    },
+                    "type": "css"
+                }
+            }
+        ],
+        "methods": [
+            {
+                "action": {
+                    "actions": [
+                        {
+                            "parent": null,
+                            "target": {
+                                "displayFilter": true,
+                                "selector": "#truste-show-consent"
+                            },
+                            "type": "waitcss"
+                        },
+                        {
+                            "parent": {
+                                "selector": "#truste-consent-content"
+                            },
+                            "target": {
+                                "selector": "#truste-show-consent"
+                            },
+                            "type": "click"
+                        },
+                        {
+                            "type": "waitcss",
+                            "target": {
+                                "selector": ".cookiecat"
+                            },
+                            "parent": {
+                                "selector": ".mainContent"
+                            },
+                            "retries": 10,
+                            "waitTime": 250
+                        }
+                    ],
+                    "type": "list"
+                },
+                "name": "OPEN_OPTIONS"
+            },
+            {
+                "action":{
+                    "type":"consent",
+                    "consents": [
+                        {
+                            "matcher":{
+                                "type":"checkbox",
+                                "parent":{
+                                    "selector": ".mainContent",
+                                    "textFilter":"Functional Cookies"
+                                },
+                                "target":{
+                                    "selector":"span"
+                                }
+                            },
+                            "toggleAction":{
+                                "type":"click",
+                                "target":{
+                                    "selector": "span"
+                                },
+                                "parent":{
+                                    "selector": ".mainContent",
+                                    "textFilter":"Functional Cookies"
+                                }
+                            },
+                            "type": "A"
+                        },
+                        {
+                            "matcher":{
+                                "type":"checkbox",
+                                "parent":{
+                                    "selector": ".mainContent",
+                                    "textFilter":"Personalization Cookies"
+                                },
+                                "target":{
+                                    "selector":"span"
+                                }
+                            },
+                            "toggleAction":{
+                                "type":"click",
+                                "target":{
+                                    "selector": "span"
+                                },
+                                "parent":{
+                                    "selector": ".mainContent",
+                                    "textFilter":"Personalization Cookies"
+                                }
+                            },
+                            "type": "B"
+                        }
+                    ]
+                },
+                "name": "DO_CONSENT"
+            },
+            {
+                "action": {
+                    "type": "list",
+                    "actions": [
+                        {
+                            "type": "wait",
+                            "waitTime": 500
+                        },
+                        {
+                            "type": "click",
+                            "target": {
+                                "selector": ".submit"
+                            }
+                        }
+                    ]
+                },
+                "name": "SAVE_CONSENT"
+            }
+        ]
+    }
+}
