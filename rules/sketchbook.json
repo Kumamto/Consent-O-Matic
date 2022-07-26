@@ -37,13 +37,22 @@
                                     "selector":".sqs-cookie-banner-v2-acceptWrapper"
                                 }
                             },
-                            "toggleAction":{
+                            "trueAction":{
                                 "type":"click",
                                 "target":{
                                     "selector": "button"
                                 },
                                 "parent":{
                                     "selector":".sqs-cookie-banner-v2-acceptWrapper"
+                                }
+                            },
+                            "falseAction":{
+                                "type":"click",
+                                "target":{
+                                    "selector": "button"
+                                },
+                                "parent":{
+                                    "selector":".sqs-cookie-banner-v2-denytWrapper"
                                 }
                             },
                             "type": "A"
