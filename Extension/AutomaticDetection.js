@@ -39,7 +39,7 @@ class AutomaticDetector {
                     "bannerDom": cmp,
                     "buttons": []
                 };
-                cmp.querySelectorAll("button, a").forEach((button)=>{
+                cmp.querySelectorAll("button, a, span").forEach((button)=>{
                     banner.buttons.push(button);
                 });
 

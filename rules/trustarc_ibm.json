@@ -67,7 +67,7 @@
                         "type": "ifcss",
                         "target": {
                           "selector": "h3",
-                          "textFilter": "Functional cookies"
+                          "textFilter": "Functional Cookies"
                         },
                         "trueAction": {
                           "type": "consent",
@@ -105,7 +105,7 @@
                         "type": "ifcss",
                         "target": {
                           "selector": "h3",
-                          "textFilter": "Personalization cookies"
+                          "textFilter": "Personalization Cookies"
                         },
                         "trueAction": {
                           "type": "consent",
