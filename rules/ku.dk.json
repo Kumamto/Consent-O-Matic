@@ -67,33 +67,19 @@
                 "name": "DO_CONSENT"
             },
             {
-                "action": {
-                    "type": "list",
+                "action":{
+                    "type":"list",
                     "actions": [
                         {
-                            "type": "ifcss",
+                            "type":"hide",
                             "target": {
-                                "selector": "btn-default btn-lg",
-                                "textFilter": "Accept selected"
+                                "selector": "main.container.ccc-popup"
                             },
-                            "trueAction": {
-                                "type": "click",
-                                "target": {
-                                    "selector": "btn-default btn-lg",
-                                    "textFilter": "Accept selected"
-                                }
-                            },
-                            "falseAction": {
-                                "type": "click",
-                                "target": {
-                                    "selector": "btn-default btn-lg",
-                                    "textFilter": "Reject all"
-                                }
-                            }
+                            "forceHide": true
                         }
                     ]
                 },
-                "name": "SAVE_CONSENT"
+                "name": "HIDE_CMP"
             },
             {
                 "name": "UTILITY"
