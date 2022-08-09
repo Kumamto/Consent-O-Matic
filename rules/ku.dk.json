@@ -74,41 +74,26 @@
                             "type": "ifcss",
                             "target": {
                                 "selector": ".btn",
-                                "textFilter": "Accept selected|Acceptér valgte"
+                                "textFilter": "Acceptér valgte"
                             },
                             "trueAction": {
                                 "type": "click",
                                 "target": {
                                     "selector": ".btn",
-                                    "textFilter": "Accept selected|Acceptér valgte"
+                                    "textFilter": "Acceptér valgte"
                                 }
                             },
                             "falseAction": {
                                 "type": "click",
                                 "target": {
                                     "selector": ".btn",
-                                    "textFilter": "Reject all|Afslå alle"
+                                    "textFilter": "Afslå alle"
                                 }
                             }
                         }
                     ]
                 },
                 "name": "SAVE_CONSENT"
-            },
-            {
-                "action":{
-                    "type":"list",
-                    "actions": [
-                        {
-                            "type":"hide",
-                            "target": {
-                                "selector": "main.container.ccc-popup"
-                            },
-                            "forceHide": true
-                        }
-                    ]
-                },
-                "name": "HIDE_CMP"
             },
             {
                 "name": "UTILITY"
