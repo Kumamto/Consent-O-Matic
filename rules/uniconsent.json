@@ -27,7 +27,7 @@
                             "parent": null,
                             "target": {
                                 "selector": ".unic .unic-box button, .unic .unic-bar button",
-                                "textFilter": "Manage Options"
+                                "textFilter": "管理選項"
                             },
                             "type": "waitcss"
                         },
@@ -35,7 +35,7 @@
                             "parent": null,
                             "target": {
                                 "selector": ".unic .unic-box button, .unic .unic-bar button",
-                                "textFilter": "Manage Options"
+                                "textFilter": "管理選項"
                             },
                             "type": "click"
                         }
@@ -215,8 +215,8 @@
                 "action": {
                     "parent": null,
                     "target": {
-                        "selector": ".unic .unic-box button, .unic .unic-bar button",
-                        "textFilter": "Save Choices"
+                        "selector": "rounded outline-none m-2",
+                        "textFilter": "確認選擇"
                     },
                     "type": "click"
                 },
