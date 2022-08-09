@@ -74,20 +74,20 @@
                             "type": "ifcss",
                             "target": {
                                 "selector": ".btn",
-                                "textFilter": "Acceptér valgte"
+                                "textFilter": "Accept selected"
                             },
                             "trueAction": {
                                 "type": "click",
                                 "target": {
                                     "selector": ".btn",
-                                    "textFilter": "Acceptér valgte"
+                                    "textFilter": "Accept selected"
                                 }
                             },
                             "falseAction": {
                                 "type": "click",
                                 "target": {
                                     "selector": ".btn",
-                                    "textFilter": "Afslå alle"
+                                    "textFilter": "Reject all"
                                 }
                             }
                         }
