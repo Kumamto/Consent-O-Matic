@@ -67,19 +67,14 @@
                 "name": "DO_CONSENT"
             },
             {
-                "action":{
-                    "type":"list",
-                    "actions": [
-                        {
-                            "type":"hide",
-                            "target": {
-                                "selector": "main.container.ccc-popup"
-                            },
-                            "forceHide": true
-                        }
-                    ]
+                "action": {
+                    "type": "click",
+                    "target":{
+                        "selector": "btn btn-default btn-lg",
+                        "textFilter":"Accept selected"
+                    }
                 },
-                "name": "HIDE_CMP"
+                "name": "SAVE_CONSENT"
             },
             {
                 "name": "UTILITY"
