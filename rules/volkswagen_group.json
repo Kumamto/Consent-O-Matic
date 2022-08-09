@@ -1,0 +1,86 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Kumamto/Consent-O-Matic/master/rules.schema.json",
+    "Volkswagen_group": {
+        "detectors": [
+            {
+                "presentMatcher": [
+                    {
+                        "type": "css",
+                        "target": {
+                            "selector": ".js-cookietext__button-detail"
+                        }
+                    }
+                ],
+                "showingMatcher": [
+                    {
+                        "type": "css",
+                        "target": {
+                            "selector": ".js-cookietext__button-detail",
+                            "displayFilter": true
+                        }
+                    }
+                ]
+            }
+        ],
+        "methods": [
+            {
+                "action":{
+                    "type":"list",
+                    "actions": [
+                        {
+                            "type":"click",
+                            "target":{
+                                "selector": ".js-cookietext__button-detail"
+                            }
+                        },
+                        {
+                            "type": "waitcss",
+                            "target": {
+                              "selector": ".cookie-details-form"
+                            },
+                            "retries": 10,
+                            "waitTime": 250
+                        }
+                    ]
+                },
+                "name": "OPEN_OPTIONS"
+            },
+            {
+                "action": {
+                    "type": "consent",
+                    "consents": [
+                        {
+                            "matcher": {
+                                "type": "checkbox",
+                                "target": {
+                                    "selector": ".js-cookie-details__checkbox-analytics"
+                                }
+                            },
+                            "toggleAction": {
+                                "type": "click",
+                                "target": {
+                                    "selector": ".js-cookie-details__checkbox-analytics"
+                                }
+                            },
+                            "type": "A"
+                        }
+                    ]
+                },
+                "name": "DO_CONSENT"
+            },
+            {
+                "action": {
+                    "type": "click",
+                    "target": {
+                        "selector": ".js-cookie-details__button-save",
+                        "displayFilter": true
+                    }
+                },
+                "name": "SAVE_CONSENT"
+            },
+            {
+                "name": "UTILITY"
+            }
+        ]
+    }
+}
