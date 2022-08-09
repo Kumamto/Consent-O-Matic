@@ -73,20 +73,20 @@
                         {
                             "type": "ifcss",
                             "target": {
-                                "selector": ".btn",
+                                "selector": "btn-default btn-lg",
                                 "textFilter": "Accept selected"
                             },
                             "trueAction": {
                                 "type": "click",
                                 "target": {
-                                    "selector": ".btn",
+                                    "selector": "btn-default btn-lg",
                                     "textFilter": "Accept selected"
                                 }
                             },
                             "falseAction": {
                                 "type": "click",
                                 "target": {
-                                    "selector": ".btn",
+                                    "selector": "btn-default btn-lg",
                                     "textFilter": "Reject all"
                                 }
                             }
