@@ -19,12 +19,6 @@
         ],
         "methods": [
             {
-                "name": "HIDE_CMP"
-            },
-            {
-                "name": "OPEN_OPTIONS"
-            },
-            {
                 "action": {
                     "type": "list",
                     "actions": [
@@ -100,6 +94,21 @@
                     ]
                 },
                 "name": "SAVE_CONSENT"
+            },
+            {
+                "action":{
+                    "type":"list",
+                    "actions": [
+                        {
+                            "type":"hide",
+                            "target": {
+                                "selector": "main.container.ccc-popup"
+                            },
+                            "forceHide": true
+                        }
+                    ]
+                },
+                "name": "HIDE_CMP"
             },
             {
                 "name": "UTILITY"
