@@ -38,7 +38,7 @@
                         {
                             "type": "waitcss",
                             "target": {
-                                "selector": "#didomi-purpose-cookies"
+                                "selector": "#didomi-purpose-cookies didomi-consent-popup-categories didomi-consent-popup-categories-nested"
                             },
                             "retries": 50,
                             "waitTime": 50
@@ -46,7 +46,7 @@
                         {
                             "type": "foreach",
                             "target": {
-                                "selector": "#didomi-host .didomi-consent-popup-data-processing"
+                                "selector": ".didomi-consent-popup-category"
                             },
                             "action": {
                                 "type": "list",
@@ -54,11 +54,12 @@
                                     {
                                         "type": "ifcss",
                                         "target": {
-                                            "selector": ".didomi-components-accordion",
+                                            "selector": ".didomi-components-accordion-label-container",
                                             "textFilter": [
                                                 "Store and/or access information on a device",
                                                 "Actively scan device characteristics for identification",
-                                                "Use precise geolocation data"
+                                                "Use precise geolocation data",
+                                                "Storing and/or accessing information on a terminal"
                                             ]
                                         },
                                         "trueAction": {
@@ -85,7 +86,7 @@
                                     {
                                         "type": "ifcss",
                                         "target": {
-                                            "selector": ".didomi-components-accordion",
+                                            "selector": ".didomi-components-accordion-label-container",
                                             "textFilter": [
                                                 "Create a personalised ads profile",
                                                 "Apply market research to generate audience insights",
@@ -93,7 +94,8 @@
                                                 "Select basic ads",
                                                 "Select personalised ads",
                                                 "Storage and access to geolocation information for targeted advertising purposes",
-                                                "Offer personalised advertising"
+                                                "Offer personalised advertising",
+                                                "Personalised advertising and ad performance measurement"
                                             ]
                                         },
                                         "trueAction": {
@@ -120,7 +122,7 @@
                                     {
                                         "type": "ifcss",
                                         "target": {
-                                            "selector": ".didomi-components-accordion",
+                                            "selector": ".didomi-components-accordion-label-container",
                                             "textFilter": [
                                                 "Create a personalised content profile",
                                                 "Measure content performance",
@@ -152,7 +154,7 @@
                                     {
                                         "type": "ifcss",
                                         "target": {
-                                            "selector": ".didomi-components-accordion",
+                                            "selector": ".didomi-components-accordion-label-container",
                                             "textFilter": [
                                                 "Develop and improve products"
                                             ]
@@ -181,9 +183,10 @@
                                     {
                                         "type": "ifcss",
                                         "target": {
-                                            "selector": ".didomi-components-accordion",
+                                            "selector": ".didomi-components-accordion-label-container",
                                             "textFilter": [
-                                                "Audience measurement and content performance"
+                                                "Audience measurement and content performance",
+                                                "Personalised content, content performance measurement, audience data, and product development"
                                             ]
                                         },
                                         "trueAction": {
@@ -209,32 +212,6 @@
                                     }
                                 ]
                             }
-                        },
-                        {
-                            "type": "click",
-                            "target": {
-                                "selector": ".didomi-consent-popup-view-vendors-list-link"
-                            }
-                        },
-                        {
-                            "type": "consent",
-                            "consents": [
-                                {
-                                    "trueAction": {
-                                        "type": "click",
-                                        "target": {
-                                            "selector": ".didomi-consent-popup-container-click-all .didomi-components-radio .didomi-components-radio__option:nth-child(2)"
-                                        }
-                                    },
-                                    "falseAction": {
-                                        "type": "click",
-                                        "target": {
-                                            "selector": ".didomi-consent-popup-container-click-all .didomi-components-radio .didomi-components-radio__option:nth-child(1)"
-                                        }
-                                    },
-                                    "type": "X"
-                                }
-                            ]
                         }
                     ]
                 },
