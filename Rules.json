@@ -206,6 +206,106 @@
       }
     ]
   },
+  "kucmp": {
+    "detectors": [
+        {
+            "presentMatcher": {
+                "type": "css",
+                "target": {
+                    "selector": "main.container.ccc-popup"
+                }
+            },
+            "showingMatcher": {
+                "type": "css",
+                "target": {
+                    "selector": ".ccc-popup-header"
+                }
+            }
+        }
+    ],
+    "methods": [
+        {
+            "action": {
+                "type": "list",
+                "actions": [
+                    {
+                        "type": "consent",
+                        "consents": [
+                            {
+                                "matcher": {
+                                    "type": "checkbox",
+                                    "target": {
+                                        "selector": "#check-0"
+                                    }
+                                },
+                                "toggleAction": {
+                                    "type": "click",
+                                    "target": {
+                                        "selector": "#check-0"
+                                    }
+                                },
+                                "type": "B"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "consent",
+                        "consents": [
+                            {
+                                "matcher": {
+                                    "type": "checkbox",
+                                    "target": {
+                                        "selector": "#check-1"
+                                    }
+                                },
+                                "toggleAction": {
+                                    "type": "click",
+                                    "target": {
+                                        "selector": "#check-1"
+                                    }
+                                },
+                                "type": "F"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "name": "DO_CONSENT"
+        },
+        {
+            "action": {
+                "type": "list",
+                "actions": [
+                    {
+                        "type": "ifcss",
+                        "target": {
+                            "selector": "btn-default btn-lg",
+                            "textFilter": "Accept selected"
+                        },
+                        "trueAction": {
+                            "type": "click",
+                            "target": {
+                                "selector": "btn-default btn-lg",
+                                "textFilter": "Accept selected"
+                            }
+                        },
+                        "falseAction": {
+                            "type": "click",
+                            "target": {
+                                "selector": "btn-default btn-lg",
+                                "textFilter": "Reject all"
+                            }
+                        }
+                    }
+                ]
+            },
+            "name": "SAVE_CONSENT"
+        },
+        {
+            "name": "UTILITY"
+        }
+    ]
+},
   "EvidonBanner":{
     "detectors":[
       {
