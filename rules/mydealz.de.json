@@ -6,13 +6,13 @@
                 "presentMatcher": {
                     "type": "css",
                     "target": {
-                        "selector": "div.oreo-message.bg--color-white.bRad--t-a.space--h-4.space--v-4.boxShadow--large.seal--pointer-on.overflow--scrollY-raw.space--mt-2"
+                        "selector": "div.flex--fromW3.hAlign--all-c"
                     }
                 },
                 "showingMatcher": {
                     "type": "css",
                     "target": {
-                        "selector": "div.oreo-message.bg--color-white.bRad--t-a.space--h-4.space--v-4.boxShadow--large.seal--pointer-on.overflow--scrollY-raw.space--mt-2"
+                        "selector": "div.flex--fromW3.hAlign--all-c"
                     }
                 }
             }
@@ -20,29 +20,9 @@
         "methods": [
             {
                 "action": {
-                    "type": "list",
-                    "actions": [
-                        {
-                            "type": "click",
-                            "target": {
-                                "childFilter": {
-                                    "target": {
-                                        "selector": "span.btn.btn--mode-primary",
-                                        "textFilter": "Einstellungen speichern"
-                                    }
-                                },
-                                "selector": "button.width--all-12"
-                            }
-                        }
-                    ]
-                },
-                "name": "HIDE_CMP"
-            },
-            {
-                "action": {
                     "type": "click",
                     "target": {
-                        "selector": "button.flex--grow-1.text--color-brandPrimary.text--b.space--h-3"
+                        "selector": "button.flex--grow-1.flex--fromW3-grow-0.width--fromW3-ctrl-m.text--b"
                     }
                 },
                 "name": "OPEN_OPTIONS"
@@ -58,7 +38,7 @@
                                     "trueAction": {
                                         "type": "click",
                                         "target": {
-                                            "selector": "label.size--all-xl.text--b.flex--grow-1.space--mr-3.clickable",
+                                            "selector": "label.checkbox.checkbox--switch.size--all-m",
                                             "textFilter": "Personalisierungs-Cookies"
                                         }
                                     },
@@ -73,7 +53,7 @@
                                     "trueAction": {
                                         "type": "click",
                                         "target": {
-                                            "selector": "label.size--all-xl.text--b.flex--grow-1.space--mr-3.clickable",
+                                            "selector": "label.checkbox.checkbox--switch.size--all-m",
                                             "textFilter": "Funktionalitäts-Cookies"
                                         }
                                     },
@@ -88,7 +68,7 @@
                                     "trueAction": {
                                         "type": "click",
                                         "target": {
-                                            "selector": "label.size--all-xl.text--b.flex--grow-1.space--mr-3.clickable",
+                                            "selector": "label.checkbox.checkbox--switch.size--all-m",
                                             "textFilter": "Analyse-Cookies"
                                         }
                                     },
@@ -119,6 +99,26 @@
                     ]
                 },
                 "name": "SAVE_CONSENT"
+            },
+            {
+                "action": {
+                    "type": "list",
+                    "actions": [
+                        {
+                            "type": "click",
+                            "target": {
+                                "childFilter": {
+                                    "target": {
+                                        "selector": "span.btn.btn--mode-primary",
+                                        "textFilter": "Einstellungen speichern"
+                                    }
+                                },
+                                "selector": "button.width--all-12"
+                            }
+                        }
+                    ]
+                },
+                "name": "HIDE_CMP"
             }
         ]
     }
